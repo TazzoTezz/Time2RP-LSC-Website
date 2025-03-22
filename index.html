@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LS Customs - Price Sheet</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="LS Customs Price Sheet for Performance and Cosmetic Parts">
+  <meta property="og:title" content="LS Customs - Price Sheet">
+  <meta property="og:description" content="Check out the price sheet for performance and cosmetic parts at LS Customs.">
+  <meta property="og:image" content="https://time2rp.com/assets/images/logo.webp">
+  <meta property="og:url" content="https://yourwebsite.com">
+</head>
+<body>
+  <div class="grid-container">
+    <div class="card">
+      <h3>Performance Parts</h3>
+      <div id="performanceTable"></div>
+      <p class="bold" style="text-align: right; margin-bottom: 5px;"> Performance Total: $<span id="performanceTotal">0</span></p>
+      <p style="text-align: right; margin-top: 0;">(Parts: <span id="performanceCount">0</span>)</p>
+    </div>
+    <div class="card">
+      <h3>Cosmetic Parts</h3>
+      <div id="cosmeticTable"></div>
+      <p class="bold" style="text-align: right; margin-bottom: 5px;">Cosmetic Total: $<span id="cosmeticTotal">0</span></p>
+      <p style="text-align: right; margin-top: 0;">(Parts: <span id="cosmeticCount">0</span>)</p>
+    </div>
+    <div class="card-col3">
+      <h4>LS Customs - Price List</h4>
+      <div class="logo-container">
+        <img src="./images/Time2logo.webp" alt="Time2RP Logo" class="img">
+        <img src="./images/lsc_circle.webp" alt="LS Customs" class="img">
+      </div>
+      <h2>Totals</h2>
+      <p class="bold" style="text-align: left;">Total Parts: <span id="totalParts">0</span></p>
+      <table>
+        <tr>
+          <td class="bold">Grand Total:</td>
+          <td class="bold">$<span id="total">0</span></td>
+        </tr>
+        <tr>
+          <td class="bold">PD/EMS Price:</td>
+          <td class="bold">$<span id="pdEmsPrice">0</span></td>
+        </tr>
+        <tr>
+          <td class="bold">Commission (15%):</td>
+          <td class="bold">$<span id="commission">0</span></td>
+        </tr>
+      </table>
+      <label>
+        <input type="checkbox" id="calcCommission"> Calculate Commission from PD/EMS Price
+      </label>
+      <br>
+      <div style="display: flex; justify-content: space-between;">
+        <button id="fullUpgradeButton">Full Upgrade</button>
+        <button id="resetButton">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.getElementById('calcCommission').addEventListener('click', updateTotals);
+    document.getElementById('fullUpgradeButton').addEventListener('click', fullUpgrade);
+    document.getElementById('resetButton').addEventListener('click', resetAll);
+  </script>
+</body>
+</html>
